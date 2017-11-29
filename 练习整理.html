@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+</head>
+<body>
+	
+</body>
+</html>
+<!-- 乘法表 -->
+<script>
+/*for*/	
+	for(var i = 1;i<=9;i++){
+		for(var j = 1;j<=i;j++){
+			document.write(`${i}*${j}=${i*j}`);
+			document.write('&nbsp;&nbsp;&nbsp;')
+		}
+		document.write("<br>")
+	}
+
+/*while*/
+	var h =1;
+	while(h<10){
+		var l = 1;
+		while(l<=h){
+			document.write(`${h}*${l}=${h * l}`);
+			document.write('&nbsp;&nbsp;');
+			l++;
+		}
+		document.write('<br>')
+		h++;
+	}
+</script>
+
+<!-- 成绩单 -->
+<script>
+	// var num = prompt('请输入成绩');
+	// if(num>=60 && num<=100){
+	// 	alert('及格');
+	// 	if(num>=90 && num<=100){
+	// 		alert('优秀');
+	// 	}else if(num>=80 && num<90){
+	// 		alert('良好');
+	// 	}else{
+	// 		alert('刚及格');
+	// 	}
+	// }else{
+	// 	alert('不及格');
+	// 	if(num>=40 && num<60){
+	// 		alert('快努力');
+	// 	}else{
+	// 		alert('要好好学习');
+	// 	}
+	// }
+</script>
+
+<!--星期  -->
+<script>
+	// var week = prompt('今天星期几');
+	// switch(week){
+	// 	case '1': alert('今天星期一');
+	// 	break;
+	// 	case '2': alert('今天星期二');
+	// 	break;
+	// 	case '3': alert('今天星期三');
+	// 	break;
+	// 	case '4': alert('今天星期四');
+	// 	break;
+	// 	case '5': alert('今天星期五');
+	// 	break;
+	// 	case '6': alert('今天星期六');
+	// 	break;
+	// 	case '7': alert('今天星期日');
+	// 	break;
+	// 	default: alert('输入有误');
+	// }
+</script>
+
+<!-- 四则运算 -->
+<script>
+	var num1 = Number(prompt('请输入数字'));
+	var ope = prompt('请输入运算符');
+	var num2 = Number(prompt('请输入数字'));
+	switch(ope){
+		case'+':alert(`${num1}+${num2}=${num1 + num2}`);
+		break;
+		case'-':alert(`${num1}-${num2}=${num1 - num2}`);
+		break;
+		case'*':alert(`${num1}*${num2}=${num1 * num2}`);
+		break;
+		case'/':alert(`${num1}/${num2}=${num1 / num2}`);
+		break;
+	}
+</script>
+
+<!-- 100以内的奇偶数 -->
+<script>
+	for(var i=1;i <=100;i++){
+		if(i % 2 == 0){
+			console.log(`这是100以内的偶数${i}`);
+		}else{
+			console.log(`这是100以内的奇数${i}`)
+		}
+	}
+</script>
+
+<!-- 水仙花 -->
+<script>
+	for(var h=1;h<10;h++){
+		for(var s=0;s<10;s++){
+			for(var g=0;g<10;g++){
+				if((h**3 + s**3 + g**3) == (h*100 + s*10 + g)){
+					console.log(`这是水仙花的个数${h*100 + s*10 + g}`)
+				}
+			}
+		}
+	}
+</script>
+
+<!-- 金字塔 -->
+<script>
+	for(var i=0;i<5;i++){
+		for(var j=0;j<5-1-i;j++){
+			document.write('&nbsp;&nbsp;')
+		}
+		for(var x=0;x<i+1;x++){
+			document.write('*&nbsp;&nbsp;&nbsp;')
+		}
+		document.write('<br>')
+	}
+</script>
+
+<!-- 10*10表格 -->
+<script>
+	var tab = '<table width="500px" height="500px" border="1px" cellspacing="0">';
+    for(var i = 0;i < 10;i++){
+       if(i % 2 == 0){
+            tab += '<tr bgColor="pink">';
+       }else{
+            tab += '<tr bgColor="yellow">';
+       }
+       for(var j = 0;j < 10;j++){
+        tab += '<td></td>';
+       }
+       tab += '</tr>';
+    }
+   tab += '</table>';
+   document.write(tab);
+</script>
+<!-- 数组元素扩大二倍 -->
+<script>
+	var arr=[12,3,5,7,1];	
+	for(var i = 0;i<arr.length;i++){
+		arr[i] = arr[i] * 2;
+	}
+	console.log(arr)
+</script>
+
+<!-- 数组去空 -->
+<script>
+	var arr=[12,34,,12,5,,6];
+	var arr1=[];
+	for(var i =0;i<arr.length;i++){
+		if(arr[i] != undefined){
+			arr1[arr1.length]=arr[i]
+		}
+	}
+	console.log(arr1)
+</script>
+
+<!-- 数组反向输出 -->
+<script>
+	var arr = [23,12,4,7,11];
+	var arr1 = [];
+	for(var i=0;i<arr.length;i++){
+		arr1[i]=arr[arr.length-1-i]
+	}
+	console.log(arr1)
+</script>
+
+<!-- 数组的合并 -->
+<script>
+	var arr1 = [12,5,2,9,23];
+	var arr2 = [3,14,11,1,15];
+	for(var i = 0;i<arr1.length;i++){
+		arr2[arr2.length] = arr1[i];
+	}
+	console.log(arr2)
+</script>
+
+<!-- 排序 -->
+<script>
+	var arr =[23,12,45,23,1];
+	for(var i =0;i<arr.length;i++){
+		for(var j =i+1;j<arr.length;j++){
+			if(arr[i]<arr[j]){
+				var a = arr[i];
+				arr[i] = arr[j];
+				arr[j] = a;
+			}
+		}
+	}console.log(arr)
+</script>
+
+<!-- 数组最大最小平均值 -->
+<script>
+	var arr= [12,23,7,15,6];
+	var max = arr[0];
+	var min = arr[0];
+	var sum = 0;
+	for(var i = 0;i<arr.length;i++){
+		if(max<arr[i]){
+			max = arr[i];
+		}
+	}
+	for(var j = 0;j<arr.length;j++){
+		if(min>arr[j]){
+			min = arr[j];
+		}
+	}	
+	for(var m = 0;m<arr.length;m++){
+		sum = sum+arr[m];
+	}
+	console.log(max);
+	console.log(min);
+	console.log(sum / arr.length)
+</script>
+
+<!-- 筛选数组中大于0的数 -->
+<script>
+	var arr = [23,11,15,-2,2,-4];
+	for(var i = 0;i<arr.length;i++){
+		if(arr[i]>0){
+			console.log(arr[i])
+		}
+	}	
+</script>
+
+<!-- 数组筛选数据类型 -->
+<script>
+	var arr = [12,true,null,undefined,'你好'];
+	for(var i = 0;i<arr.length;i++){
+		if(typeof(arr[i]) == 'number'){
+			console.log(`数据类型为number:${arr[i]}`)
+		}
+		if(typeof(arr[i]) == 'boolean'){
+			console.log(`数据类型为boolean:${arr[i]}`)
+		}
+		if(typeof(arr[i]) == 'string'){
+			console.log(`数据类型为string:${arr[i]}`)
+		}
+		if(typeof(arr[i]) == 'object'){
+			console.log(`数据类型为null:${arr[i]}`)
+		}
+		if(typeof(arr[i]) == 'undefined'){
+			console.log(`数据类型为undefined:${arr[i]}`)
+		}
+	}
+</script>
+
+<!-- 封装 -->
+<!-- 数组筛选数据类型封装 -->
+<script>
+	function tp(num){
+		for(var i = 0;i<num.length;i++){
+			if(typeof(num[i]) == 'number'){
+				console.log(`数据类型为number:${num[i]}`)
+			}
+			if(typeof(num[i]) == 'boolean'){
+				console.log(`数据类型为boolean:${num[i]}`)
+			}
+			if(typeof(num[i]) == 'string'){
+				console.log(`数据类型为string:${num[i]}`)
+			}
+			if(typeof(num[i]) == 'object'){
+				console.log(`数据类型为null:${num[i]}`)
+			}
+			if(typeof(num[i]) == 'undefined'){
+				console.log(`数据类型为undefined:${num[i]}`)
+			}
+		}
+	}
+	tp(num = [null,undefined,23,false,'ok'])
+</script>
+<!-- 筛选数组中大于0的数封装 -->
+<script>
+	function zs(num){
+		for(var i = 0;i<num.length;i++){
+			if(num[i]>0){
+				console.log(num[i])
+			}
+		}	
+	}
+	zs(num=[12,-3,-1,34,-6])
+</script>
+<!-- 数组最大最小平均值封装 -->
+<script>
+	function sz(num){
+		var sum = 0;
+		var min = num[0];
+		var max = num[0];
+		for(var i = 0;i<num.length;i++){			
+			if(max<num[i]){
+				max = num[i];
+			}
+		}
+		for(var j = 0;j<num.length;j++){
+			if(min>num[j]){
+				min = num[j];
+			}
+		}	
+		for(var m = 0;m<num.length;m++){			
+			sum = sum+num[m];
+		}
+		console.log(max);
+		console.log(min);
+		console.log(sum / num.length)	
+	}
+	sz(num=[34,12,67,3,16])
+</script>
+<!-- 排序封装 -->
+<script>
+	function px(num){
+		for(var i =0;i<num.length;i++){
+			for(var j =i+1;j<num.length;j++){
+				if(num[i]<num[j]){
+					var a = num[i];
+					num[i] = num[j];
+					num[j] = a;
+				}
+			}
+		}
+		return num
+	}
+	console.log(px(num = [12,26,7,11,9]))
+</script>
+<!-- 数组的合并封装 -->
+<script>
+	function hb(num1,num2){
+		for(var i = 0;i<num1.length;i++){
+			num2[num2.length] = num1[i];
+		}
+		console.log(num2)
+	}
+	hb(num1 = [11,2,56,3,9],num2 = [13,45,2,7,5])
+</script>
+<!-- 数组反向输出封装 -->
+<script>
+	function fx(num){
+		var arr1 = [];
+		for(var i=0;i<num.length;i++){
+			arr1[i]=num[num.length-1-i]
+		}
+		console.log(arr1)
+	}
+	fx(num = [23,45,1,2,16])
+</script>
+<!-- 数组去空封装 -->
+<script>
+	function qk(num){
+		var arr1=[];
+		for(var i =0;i<num.length;i++){
+			if(num[i] != undefined){
+				arr1[arr1.length]=num[i]
+			}
+		}
+		console.log(arr1)
+	}
+	qk(num = [12,34,,2,,11])
+</script>
+<!-- 数组元素扩大二倍封装 -->
+<script>
+	function kd(num,num2){
+		for(var i = 0;i<num.length;i++){
+			num[i] = num[i] * num2;
+		}
+		console.log(num)
+	}
+	kd(num=[12,3,16,22,6],3)
+</script>
+<!-- 10*10表格封装 -->
+<script>
+	function bg(num3,num4){
+		var tab = '<table width=500px height=500px border="1px" cellspacing="0">';
+    	for(var i = 0;i < num3;i++){
+    	   if(i % 2 == 0){
+    	        tab += '<tr bgColor="red">';
+    	   }else{
+    	        tab += '<tr bgColor="blue">';
+    	   }
+    	   for(var j = 0;j < num4;j++){
+    	    tab += '<td></td>';
+    	   }
+    	   tab += '</tr>';
+    	}
+   		tab += '</table>';
+   		document.write(tab);
+	}
+	bg(6,10)
+</script>
+<!-- 金字塔封装 -->
+<script>
+	function ta(num){
+		for(var i=0;i<num;i++){
+			for(var j=0;j<num-1-i;j++){
+				document.write('&nbsp;&nbsp;')
+			}
+			for(var x=0;x<i+1;x++){
+				document.write('*&nbsp;&nbsp;&nbsp;')
+			}
+			document.write('<br>')
+		}
+	}
+	ta(8)
+</script>
+<!-- 四则运算封装 -->
+<script>
+	function szys(a,op,b){	
+		switch(op){
+			case "+":console.log(`a+b=${a + b}`);
+			break;
+			case "-":console.log(`a-b=${a - b}`);
+			break;
+			case "*":console.log(`a*b=${a * b}`);
+			break;
+			case "/":console.log(`a/b=${a / b}`);
+			break;
+			case "%":console.log(`a%b=${a % b}`);
+			break;
+			default:console.log();
+		}
+	}
+	szys(3,'+',5);
+</script>
+<!-- 乘法表封装 -->
+<script>
+	function cfb(num){
+		for(var i = 1;i<=num;i++){
+			for(var j = 1;j<=i;j++){
+				document.write(`${i}*${j}=${i*j}`);
+				document.write('&nbsp;&nbsp;&nbsp;')
+			}
+			document.write("<br>")
+		}	
+	}
+	cfb(8)
+</script>
